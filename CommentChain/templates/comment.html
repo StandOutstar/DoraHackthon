@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/things.css" type="text/css" media="all">
+    <title>买家评论</title>
+    <style>
+        #ii{
+            text-align: center;
+            font-size: 50px;
+            /*color: crimson;*/
+        }
+        body{
+            /*background:url('../static/images/b1.jpg') no-repeat center 0*/
+            background:url("{{ url_for('static', filename='images/b1.jpg') }}") no-repeat center 0
+        }
+
+        form{
+            text-align: center;
+            padding: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+</form>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div id="ii" >
+    购买成功！快来评论吧！</br>
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<!– Comment Form –>
+<form id="comment_form" action="" method="post">
+
+    <div id="ie">&nbsp;</div>
+
+            <h3>满意度</h3>
+            <input  name="star" type="text" style="width:200px;height:20px" /></br>
+            <h3>评论</h3>
+            <input id="comments" name="comments" type="text" style="width:200px;height:100px" /></br>
+
+            <input type="submit" value="提交">
+
+
+
+
+
+</form>
+</body>
+</html>
