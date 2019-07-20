@@ -19,7 +19,7 @@
 	</script>
 	<!-- //Meta-Tags -->
 	<!-- Index-Page-CSS -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='goods.css') }}" type="text/css" media="all">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/goods.css') }}" type="text/css" media="all">
 	<!-- //Custom-Stylesheet-Links -->
 	<!--fonts -->
 	<link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
@@ -28,7 +28,7 @@
 
 	<!-- Font-Awesome-File-Links -->
 	<!-- CSS -->
-	<link rel="stylesheet" href="../static/css/font-awesome.css" type="text/css" media="all">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css') }}" type="text/css" media="all">
 	<!-- //Font-Awesome-File-Links -->
 </head>
 <!-- //Head -->
@@ -46,7 +46,7 @@
 				<div class="top-grid">
 					<div class="cart-grid" id="cart-1">
 						<div class="img">
-							<a href="things.html"><img src="{{ url_for('static', filename='images/d5.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"><img src="{{ url_for('static', filename='images/d5.jpg') }}" alt="img"></a>
 						</div>
 						<ul class="info">
 							<li>$60.00</li>
@@ -65,7 +65,7 @@
 					</div>
 					<div class="cart-grid" id="cart-2">
 						<div class="img">
-							<a href="things.html"><img src="{{ url_for('static', filename='images/d1.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"><img src="{{ url_for('static', filename='images/d1.jpg') }}" alt="img"></a>
 
 						</div>
 						<ul class="info">
@@ -86,7 +86,7 @@
 					</div>
 					<div class="cart-grid" id="cart-4">
 						<div class="img">
-							<a href="things.html"> <img src="{{ url_for('static', filename='static/images/d4.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"> <img src="{{ url_for('static', filename='images/d4.jpg') }}" alt="img"></a>
 						</div>
 						<ul class="info">
 							<li>$95.00</li>
@@ -109,7 +109,7 @@
 				<div class="bot-grid">
 					<div class="cart-grid" id="cart-5">
 						<div class="img">
-							<a href="things.html"> <img src="{{ url_for('static', filename='images/d7.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"> <img src="{{ url_for('static', filename='images/d7.jpg') }}" alt="img"></a>
 						</div>
 						<ul class="info">
 							<li>$20.00</li>
@@ -128,7 +128,7 @@
 					</div>
 					<div class="cart-grid" id="cart-6">
 						<div class="img">
-							<a href="things.html"><img src="{{ url_for('static', filename='images/d3.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"><img src="{{ url_for('static', filename='images/d3.jpg') }}" alt="img"></a>
 						</div>
 						<ul class="info">
 							<li>$50.00</li>
@@ -147,7 +147,7 @@
 					</div>
 					<div class="cart-grid" id="cart-7">
 						<div class="img">
-							<a href="things.html"> <img src="{{ url_for('static', filename='images/d2.jpg') }}" alt="img"></a>
+							<a href="{{ url_for('goods.detail', ) }}"> <img src="{{ url_for('static', filename='images/d2.jpg') }}" alt="img"></a>
 						</div>
 						<ul class="info">
 							<li>$25.00</li>
@@ -161,7 +161,7 @@
 								<input type="hidden" name="w3l_item" value="Striped Top ">
 								<input type="hidden" name="amount" value="25.00">
 								<input type="hidden" name="item_name" value="Product #008" />
-								<a href="things.html"> <button type="submit" class="button w3l-cart" data-id="cart-8">add to cart</button> </a>
+								<a href="{{ url_for('goods.detail', ) }}"> <button type="submit" class="button w3l-cart" data-id="cart-8">add to cart</button> </a>
 							</form>
 						</div>
 					</div>

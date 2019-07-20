@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/things.css') }}" type="text/css" media="all">
+</head>
+
+
+<!--<nav>-->
+<!--<h1>CommentChain</h1>-->
+<!--<ul>-->
+<!--{% if g.user %}-->
+<!--<li><span>{{ g.user['username'] }}</span>-->
+<!--<li><a href="{{ url_for('auth.logout') }}">Log Out</a>-->
+<!--{% else %}-->
+<!--<li><a href="{{ url_for('auth.register') }}">Register</a>-->
+<!--<li><a href="{{ url_for('auth.login') }}">Log In</a>-->
+<!--{% endif %}-->
+<!--</ul>-->
+<!--</nav>-->
+
+<nav>
+    <h1>EBChain</h1>
+    <ul>
+        {% if g.user %}
+        <li><span>{{ g.user['username'] }}</span>
+        <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+            {% else %}
+        <li><a href="{{ url_for('auth.login') }}">Log In</a>
+        <li><a href="{{ url_for('auth.register') }}">Register</a>
+            {% endif %}
+    </ul>
+</nav>
+
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

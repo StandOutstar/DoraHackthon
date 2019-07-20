@@ -1,12 +1,9 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
+
+{% block title %}评论商品{% endblock %}
+
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/css/things.css" type="text/css" media="all">
-    <title>买家评论</title>
     <style>
         #ii{
             text-align: center;
@@ -26,7 +23,7 @@
 
     </style>
 </head>
-<body>
+
 </form>
 </br>
 </br>
@@ -52,10 +49,10 @@
 
     <div id="ie">&nbsp;</div>
 
-            <h3>满意度</h3>
-            <input  name="star" type="text" style="width:200px;height:20px" /></br>
+            <h3>满意度: 0-5 </h3>
+            <input  name="stars" type="text" pattern="[0-5]" style="width:200px;height:20px" required/></br>
             <h3>评论</h3>
-            <input id="comments" name="comments" type="text" style="width:200px;height:100px" /></br>
+            <input name="comment" type="text" style="width:200px;height:100px" required/></br>
 
             <input type="submit" value="提交">
 
@@ -64,5 +61,4 @@
 
 
 </form>
-</body>
-</html>
+{% endblock%}

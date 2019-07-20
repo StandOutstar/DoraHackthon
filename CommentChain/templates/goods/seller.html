@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}卖家店铺{% endblock %}
+
+
+{% block content %}
+<head>
+    <style>
+        #ij {
+            text-align: center;
+            font-style: italic;
+            font-size: 50px;
+        }
+
+        input {
+            border: solid grey;
+            background: grey;
+        }
+
+        ul > li {
+            font-size: 20px;
+        }
+
+        #ii {
+            width: 1500px;
+            height: 900px;
+            background: rgba(200, 255, 255, 0.57);
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<div id="ij">
+    <img src="{{ url_for('static', filename='images/d4.jpg') }}" width="60" height="60">
+    SELLER</br>
+</div>
+
+<div id="ii">
+    <div class="comments-container">
+        <h1>交易记录</h1>
+
+        <ul id="comments-list" class="comments-list">
+            {% for deal in deals %}
+            <li>
+                <div class="comment-main-level">
+                    <!-- Avatar -->
+                    <div class="comment-avatar"><img src="{{ url_for('static', filename='images/bg2.jpg') }}" alt="">
+                    </div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+
+                        <div>
+                            <span>{{ deal['user_id'] }}</span>
+                            <span>&nbsp;&nbsp;</span>
+                            <span>{{ deal['created'] }}</span>
+                            <span>&nbsp;&nbsp;</span>
+                            <span>{{ deal['price'] }}</span>
+                        </div>
+
+                        <div align="right">
+                            <form action="{{ url_for('goods.back', id=deal['id']) }}" method="post">
+                                <input class="danger" type="submit" value="退款" style="background-color: #dc534d;border:solid #dc534d;color: white"
+                                       onclick="return confirm('Are you sure?');">
+                            </form>
+                            <!--<span style="float: right;"><input type="button" value="退货申请"-->
+                            <!--style="background-color: #dc534d;border: solid #dc534d;color: white"></span>-->
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>
+{% endblock%}

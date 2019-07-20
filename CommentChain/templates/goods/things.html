@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% block title %}商品详情{% endblock %}
+
+{% block content %}
+<form action="post" method="">
+    <div class="xiangqing">
+        <div class="neirong w">
+            <a href="{{ url_for('goods.seller', ) }}">
+                <div class="xiaomi6 fl">SELLER</div>
+            </a>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="jieshao mt20 w">
+        <div class="left fl"><img src="{{ url_for('static', filename='images/d1.jpg') }}"></div>
+        <div class="right fr">
+            <div class="h3 ml20 mt20">币币猪</div>
+            <div class="jianjie mr40 ml20 mt10">835旗舰处理器，6GB 大内存，最大可选128GB 闪存 / 5.15" 护眼屏 / 四曲面玻璃/陶瓷机身</div>
+            <div class="jiage ml20 mt10">65.00</div>
+            <div class="ft20 ml20 mt20">选择样式</div>
+            <div class="xzbb ml20 mt10">
+                <div class="banben fl">
+                    <a>
+                        <span>全网通版 6GB+64GB </span>
+                        <span>65元</span>
+                    </a>
+                </div>
+                <div class="banben fr">
+                    <a>
+                        <span>全网通版 6GB+128GB</span>
+                        <span>75元</span>
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="ft20 ml20 mt20">选择颜色</div>
+            <div class="xzbb ml20 mt10">
+                <div class="banben">
+                    <a>
+                        <span class="yuandian"></span>
+                        <span class="yanse">亮黑色</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="xiadan ml20 mt20">
+
+                <a href="{{ url_for('comment.create', )}}"> <input class="jrgwc" id="buy" type="button" name="jrgwc"
+                value="立即选购"/></a>
+                <input class="jrgwc" type="button" name="jrgwc" value="加入购物车"/>
+
+            </div>
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+</form>
+<div class="comments-container">
+    <h1>买家评论</h1>
+
+    <ul id="comments-list" class="comments-list">
+        {% for comment in comments %}
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar"><img src="{{ url_for('static', filename='images/d6.jpg') }}" alt="">
+                </div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name"><a href="#">{{ comment['username'] }}</a></h6>
+                        <span>{{ comment['created'] }}</span>
+                        <span>&nbsp;&nbsp;</span>
+                        <span>星数{{ comment['stars'] }}</span>
+                        <span>&nbsp;&nbsp;</span>
+                        <span>coin_day:&nbsp;{{ comment['coin_day'] }}</span>
+                        {% if 'back' in comment %}
+                        <span>&nbsp;&nbsp;</span>
+                        <span>退款{{ comment['back'] }}</span>
+                        {% endif %}
+
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        {{ comment['comment'] }}
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!--<script type="text/javascript">-->
+<!--$(function () {-->
+<!--$('#buy').bind('click', function () {-->
+<!--$.post(-->
+<!--"/goods/buy",-->
+<!--{price:1234},-->
+<!--);-->
+<!--return false;-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+{% endblock%}
+
+<!--<html xmlns="http://www.w3.org/1999/html">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<meta name="author" content="order by dede58.com"/>-->
+<!--<title>商品详情</title>-->
+<!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">&ndash;&gt;-->
+<!--&lt;!&ndash;<link rel="stylesheet" href="{{ url_for('static', filename='css/things.css') }}" type="text/css" media="all">&ndash;&gt;-->
+<!--&lt;!&ndash;<style>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</style>&ndash;&gt;-->
+
+<!--</head>-->
+<!--<br>-->
+
+<!--&lt;!&ndash; xiangqing &ndash;&gt;-->
+<!--<form action="post" method="">-->
+<!--<div class="xiangqing">-->
+<!--<div class="neirong w">-->
+<!--<a href="seller.html">-->
+<!--<div class="xiaomi6 fl">SELLER</div>-->
+<!--</a>-->
+
+<!--<div class="clear"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="jieshao mt20 w">-->
+<!--<div class="left fl"><img src="{{ url_for('static', filename='images/d1.jpg') }}"></div>-->
+<!--<div class="right fr">-->
+<!--<div class="h3 ml20 mt20">币币猪</div>-->
+<!--<div class="jianjie mr40 ml20 mt10">835旗舰处理器，6GB 大内存，最大可选128GB 闪存 / 5.15" 护眼屏 / 四曲面玻璃/陶瓷机身</div>-->
+<!--<div class="jiage ml20 mt10">65.00</div>-->
+<!--<div class="ft20 ml20 mt20">选择样式</div>-->
+<!--<div class="xzbb ml20 mt10">-->
+<!--<div class="banben fl">-->
+<!--<a>-->
+<!--<span>全网通版 6GB+64GB </span>-->
+<!--<span>65元</span>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="banben fr">-->
+<!--<a>-->
+<!--<span>全网通版 6GB+128GB</span>-->
+<!--<span>75元</span>-->
+<!--</a>-->
+<!--</div>-->
+<!--<div class="clear"></div>-->
+<!--</div>-->
+<!--<div class="ft20 ml20 mt20">选择颜色</div>-->
+<!--<div class="xzbb ml20 mt10">-->
+<!--<div class="banben">-->
+<!--<a>-->
+<!--<span class="yuandian"></span>-->
+<!--<span class="yanse">亮黑色</span>-->
+<!--</a>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="xiadan ml20 mt20">-->
+<!--<a href="{{ url_for('comment.create', ) }}"> <input class="jrgwc" type="button" name="jrgwc"-->
+<!--value="立即选购"/></a>-->
+<!--<input class="jrgwc" type="button" name="jrgwc" value="加入购物车"/>-->
+
+<!--</div>-->
+<!--<div class="clear"></div>-->
+
+<!--</div>-->
+
+<!--</div>-->
+<!--</form>-->
+<!--<div class="comments-container">-->
+<!--<h1>买家评论</h1>-->
+
+
+<!--<ul id="comments-list" class="comments-list">-->
+
+<!--<li>-->
+<!--<div class="comment-main-level">-->
+<!--&lt;!&ndash; Avatar &ndash;&gt;-->
+<!--<div class="comment-avatar"><img src="{{ url_for('static', filename='images/d6.jpg') }}" alt="">-->
+<!--</div>-->
+<!--&lt;!&ndash; Contenedor del Comentario &ndash;&gt;-->
+<!--<div class="comment-box">-->
+<!--<div class="comment-head">-->
+<!--<h6 class="comment-name"><a href="#">Lorena Rojero</a></h6>-->
+<!--<span>hace 10 minutos</span>-->
+<!--<i class="fa fa-reply"></i>-->
+<!--<i class="fa fa-heart"></i>-->
+<!--</div>-->
+<!--<div class="comment-content">-->
+<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium-->
+<!--vitae, praesentium optio, sapiente distinctio illo?-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+
+<!--</ul>-->
+<!--</div>-->
+<!--<footer class="mt20 center">-->
+
+<!--<div class="mt20">小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</div>-->
+<!--<div>©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</div>-->
+<!--<div>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</div>-->
+
+<!--</footer>-->
+
+<!--</html>-->

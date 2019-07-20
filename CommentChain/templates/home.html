@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!--<h1>{% block title %}Log In{% endblock %}</h1>-->
+{% endblock %}
+
+{% block content %}
+
+<!--<h1>你好呀, {{ g.user.username }} !</h1>-->
+<!--{% for post in posts %}-->
+<!--<div><p>{{ post.author.username }} 说:<b>{{ post.body }}</b></p></div>-->
+<!--{% endfor %}-->
+
+    {% if g.user %}
+      <h1>你好呀, {{ g.user.username }} !</h1>
+    {% else %}
+      <!--<li><a href="{{ url_for('auth.register') }}">Register</a>-->
+      <!--<li><a href="{{ url_for('auth.login') }}">Log In</a>-->
+    {% endif %}
+
+{% endblock%}
