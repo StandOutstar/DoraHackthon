@@ -65,13 +65,13 @@ def get_all_comments():
                 comment['back'] = True
                 delta = back_deal['created'] - order_deal['created']
                 current_app.logger.debug(f"coin delta date: {delta}")
-                comment['coin_day'] = int(delta.total_seconds() * int(order_deal['price']) / timedelta(days=1).total_seconds())
+                comment['coin_day'] = int(delta.total_seconds() * int(order_deal['price']) / timedelta(days=1).total_seconds() * 100)
                 continue
 
         # 计算本评论的币天
         delta = datetime.now() - order_deal['created']
         current_app.logger.debug(f"coin delta date: {delta}")
-        comment['coin_day'] = int(delta.total_seconds() * int(order_deal['price']) / timedelta(days=1).total_seconds())
+        comment['coin_day'] = int(delta.total_seconds() * int(order_deal['price']) / timedelta(days=1).total_seconds() * 100)
 
     if comments is None:
         current_app.logger.debug("get comments error.")
